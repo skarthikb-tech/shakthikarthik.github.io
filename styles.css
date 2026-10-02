@@ -156,8 +156,8 @@ h1, h2, h3 {
 .portrait-wrap { text-align: center; }
 
 .portrait {
-  width: min(340px, 75vw);
-  height: min(340px, 75vw);
+  width: min(260px, 65vw);
+  height: min(260px, 65vw);
   aspect-ratio: 1 / 1;
   margin-inline: auto;
   border-radius: 50%;
@@ -363,7 +363,7 @@ h1, h2, h3 {
   .lead { margin-inline: auto; }
   .hero-actions { justify-content: center; }
   .portrait-wrap { order: -1; }
-  .portrait { width: 245px; }
+  .portrait { width: 200px; height: 200px; }
   .education-row, .skills-layout { grid-template-columns: 1fr; gap: 25px; }
   .education-details { padding: 20px 0 0; border-left: 0; border-top: 1px solid var(--line); }
   .focus-grid { grid-template-columns: 1fr; }
