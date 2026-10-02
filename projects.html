@@ -6,43 +6,122 @@
   <title>Shakthi Karthik | Projects</title>
   <style>
     :root {
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
-      --primary: #1e293b;
-      --secondary: #334155;
-      --accent: #2563eb;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-      --shadow-hover: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
+      --bg-color: #090d16;
+      --header-bg: #0f172a;
+      --card-bg: #111827;
+      --primary-text: #ffffff;
+      --secondary-text: #cbd5e1;
+      --accent-blue: #38bdf8;
+      --border: #1e293b;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); color: var(--primary); line-height: 1.6; padding-bottom: 3rem; }
-    .container { max-width: 850px; margin: 0 auto; padding: 0 1.5rem; }
+    
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+      background-color: var(--bg-color); 
+      color: var(--primary-text); 
+      line-height: 1.6; 
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-    nav { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 1rem 0; margin-bottom: 2rem; }
-    .nav-container { max-width: 850px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-    .nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--primary); text-decoration: none; }
-    .nav-links { display: flex; gap: 1.25rem; }
-    .nav-links a { text-decoration: none; color: var(--secondary); font-weight: 500; font-size: 0.95rem; }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    header {
+      background-color: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      width: 100%;
+    }
 
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: var(--shadow); transition: transform 0.25s ease, box-shadow 0.25s ease; }
-    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-    .card-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.5rem; }
-    .card-title { font-size: 1.15rem; font-weight: 600; color: var(--primary); }
-    .card-subtitle { color: var(--accent); font-weight: 500; font-size: 0.95rem; }
-    .card-date { font-size: 0.85rem; color: var(--text-muted); }
+    .nav-container { 
+      width: 85%;
+      max-width: 1300px;
+      margin: 0 auto; 
+      padding: 1.25rem 0; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
 
-    ul { margin-left: 1.25rem; color: var(--secondary); font-size: 0.95rem; }
-    li { margin-bottom: 0.4rem; }
-    .page-title { font-size: 1.6rem; margin-bottom: 1.5rem; }
+    .nav-brand { 
+      font-weight: 700; 
+      font-size: 1.25rem; 
+      color: var(--primary-text); 
+      text-decoration: none; 
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links { display: flex; gap: 1.75rem; }
+    .nav-links a { text-decoration: none; color: var(--secondary-text); font-weight: 500; font-size: 1rem; transition: color 0.2s ease; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent-blue); }
+
+    .container { 
+      width: 85%; 
+      max-width: 1300px; 
+      margin: 2rem auto; 
+      flex: 1;
+    }
+
+    .page-title { 
+      font-size: 1.8rem; 
+      margin-bottom: 1.5rem; 
+      color: var(--primary-text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.4rem;
+    }
+
+    .card { 
+      background: var(--card-bg); 
+      border: 1px solid var(--border); 
+      padding: 1.75rem; 
+      margin-bottom: 1.75rem; 
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; 
+    }
+
+    .card:hover { 
+      transform: translateY(-4px); 
+      border-color: var(--accent-blue);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    .card-title { font-size: 1.25rem; font-weight: 600; color: var(--primary-text); }
+    .card-subtitle { color: var(--accent-blue); font-weight: 500; font-size: 1rem; }
+    .card-date { font-size: 0.9rem; color: var(--secondary-text); }
+
+    ul { margin-left: 1.25rem; color: var(--secondary-text); font-size: 1rem; }
+    li { margin-bottom: 0.5rem; }
+
+    footer {
+      background-color: var(--header-bg);
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      margin-top: auto;
+      width: 100%;
+    }
+
+    .footer-container {
+      width: 85%;
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links { display: flex; gap: 1.25rem; }
+    .footer-links a { color: var(--secondary-text); text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--accent-blue); }
   </style>
 </head>
 <body>
 
-  <nav>
+  <header>
     <div class="nav-container">
       <a href="index.html" class="nav-brand">Shakthi Karthik</a>
       <div class="nav-links">
@@ -51,7 +130,7 @@
         <a href="experience.html">Experience</a>
       </div>
     </div>
-  </nav>
+  </header>
 
   <div class="container">
     <h1 class="page-title">Projects & Research</h1>
@@ -59,47 +138,57 @@
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-title">CURO: Securing AI Document Assistants Against Hidden Instructions </div>
-          <div class="card-subtitle">Researcher </div>
+          <div class="card-title">CURO: Securing AI Document Assistants Against Hidden Instructions</div>
+          <div class="card-subtitle">Researcher</div>
         </div>
-        <div class="card-date">Aug 2026 – Present [cite: 25]</div>
+        <div class="card-date">Aug 2026 – Present</div>
       </div>
       <ul>
-        <li>Developing a controlled dataset of benign and malicious documents with hidden instructions embedded in text and metadata to evaluate prompt-injection vulnerabilities[cite: 26].</li>
-        <li>Running adversarial attacks against AI document-assistance workflows and measuring safeguard effectiveness[cite: 27].</li>
-        <li>Assessing local-first defenses strengthening AI document interpretation for users relying on spoken summaries or guided navigation[cite: 28].</li>
+        <li>Developing a controlled dataset of benign and malicious documents with hidden instructions embedded in text and metadata to evaluate prompt-injection vulnerabilities.</li>
+        <li>Running adversarial attacks against AI document-assistance workflows and measuring safeguard effectiveness.</li>
+        <li>Assessing local-first defenses strengthening AI document interpretation for users relying on spoken summaries or guided navigation.</li>
       </ul>
     </div>
 
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-title">DogPack [cite: 37]</div>
-          <div class="card-subtitle">Developer [cite: 37]</div>
+          <div class="card-title">DogPack</div>
+          <div class="card-subtitle">Developer</div>
         </div>
-        <div class="card-date">Aug 2026 – Present [cite: 40]</div>
+        <div class="card-date">Aug 2026 – Present</div>
       </div>
       <ul>
-        <li>Defining core user flows to connect UGA students by shared courses, study locations, and availability[cite: 41].</li>
-        <li>Designing the application using Flutter (Dart) for iOS and Android UI, backed by Supabase for authentication and PostgreSQL[cite: 42].</li>
+        <li>Defining core user flows to connect UGA students by shared courses, study locations, and availability.</li>
+        <li>Designing the application using Flutter (Dart) for iOS and Android UI, backed by Supabase for authentication and PostgreSQL.</li>
       </ul>
     </div>
 
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-title">Somnolence [cite: 29]</div>
-          <div class="card-subtitle">Co-Developer [cite: 30]</div>
+          <div class="card-title">Somnolence</div>
+          <div class="card-subtitle">Co-Developer</div>
         </div>
-        <div class="card-date">Jun 2022 – Aug 2022 [cite: 33]</div>
+        <div class="card-date">Jun 2022 – Aug 2022</div>
       </div>
       <ul>
-        <li>Co-developed a sleep-wellness application promoting healthier habits through reward systems and screen-time management[cite: 34].</li>
-        <li>Built the pitch prototype in Flutter and earned a selective (~35%) spot to present at Prequel[cite: 35, 36].</li>
+        <li>Co-developed a sleep-wellness application promoting healthier habits through reward systems and screen-time management.</li>
+        <li>Built the pitch prototype in Flutter and earned a selective (~35%) spot to present at Prequel.</li>
       </ul>
     </div>
-
   </div>
+
+  <footer>
+    <div class="footer-container">
+      <p>© Shakthi Karthik</p>
+      <div class="footer-links">
+        <a href="mailto:sk73064@uga.edu">sk73064@uga.edu</a>
+        <a href="https://linkedin.com/in/shakthi-karthik" target="_blank">LinkedIn</a>
+        <a href="https://github.com/skarthikb-tech" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
