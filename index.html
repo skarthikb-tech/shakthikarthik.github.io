@@ -3,391 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shakthi Karthik | Portfolio</title>
+  <title>Shakthi Karthik | Home</title>
   <style>
-    /* Professional Color Palette & Variables */
     :root {
       --bg-color: #f8fafc;
       --card-bg: #ffffff;
       --primary: #1e293b;
       --secondary: #334155;
       --accent: #2563eb;
-      --accent-hover: #1d4ed8;
       --text-muted: #64748b;
       --border: #e2e8f0;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-      --shadow-hover: 0 12px 20px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      --shadow-hover: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); color: var(--primary); line-height: 1.6; padding-bottom: 3rem; }
+    .container { max-width: 850px; margin: 0 auto; padding: 0 1.5rem; }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--primary);
-      line-height: 1.6;
-      padding-bottom: 3rem;
-    }
+    /* Navigation Bar */
+    nav { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 1rem 0; margin-bottom: 2rem; }
+    .nav-container { max-width: 850px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .nav-brand { font-weight: 700; font-size: 1.1rem; color: var(--primary); text-decoration: none; }
+    .nav-links { display: flex; gap: 1.25rem; }
+    .nav-links a { text-decoration: none; color: var(--secondary); font-weight: 500; font-size: 0.95rem; transition: color 0.2s ease; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
 
-    /* Container */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
+    /* Hero / Cover Photo */
+    .hero { background: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); margin-bottom: 2rem; }
+    .cover-container { width: 100%; height: 220px; background: linear-gradient(135deg, #1e293b 0%, #2563eb 100%); }
+    .cover-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .profile-body { padding: 1.75rem; }
+    .profile-body h1 { font-size: 2rem; margin-bottom: 0.25rem; }
+    .profile-body p { color: var(--text-muted); font-size: 1.05rem; }
 
-    /* Cover Photo / Hero Header */
-    .hero {
-      margin-top: 2rem;
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--card-bg);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
+    .btn-group { display: flex; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap; }
+    .btn { padding: 0.45rem 0.9rem; background: #f1f5f9; border: 1px solid var(--border); border-radius: 6px; color: var(--primary); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: all 0.2s ease; }
+    .btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-2px); }
 
-    .cover-photo-container {
-      width: 100%;
-      height: 220px;
-      background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
-      position: relative;
-    }
+    /* Interactive Lift Cards */
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: var(--shadow); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .section-title { font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; }
 
-    .cover-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .profile-content {
-      padding: 2rem;
-      position: relative;
-    }
-
-    .profile-title h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.25rem;
-    }
-
-    .profile-title p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1.25rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.5rem 1rem;
-      background-color: #f1f5f9;
-      color: var(--primary);
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      border: 1px solid var(--border);
-      transition: all 0.2s ease;
-    }
-
-    .btn:hover {
-      background-color: var(--accent);
-      color: #ffffff;
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    /* Section Styling */
-    section {
-      margin-top: 2.5rem;
-    }
-
-    .section-header {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 1rem;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 0.4rem;
-    }
-
-    /* Interactive Card Component with Lift Effect */
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.25rem;
-      box-shadow: var(--shadow);
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      border-color: #cbd5e1;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.5rem;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .card-title {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    .card-subtitle {
-      font-size: 0.95rem;
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    .card-date {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .card-body ul {
-      margin-left: 1.25rem;
-      color: var(--secondary);
-      font-size: 0.95rem;
-    }
-
-    .card-body li {
-      margin-bottom: 0.4rem;
-    }
-
-    /* Skills Pill Grid */
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-
-    .skill-pill {
-      background: #f1f5f9;
-      color: var(--primary);
-      padding: 0.35rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      border: 1px solid var(--border);
-      transition: all 0.2s ease;
-    }
-
-    .skill-pill:hover {
-      background-color: var(--accent);
-      color: #ffffff;
-      transform: translateY(-2px);
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+    .skill-pill { background: #f1f5f9; padding: 0.35rem 0.75rem; border-radius: 20px; font-size: 0.85rem; border: 1px solid var(--border); transition: all 0.2s ease; }
+    .skill-pill:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- Hero / Profile Section -->
-    <header class="hero">
-      <div class="cover-photo-container">
-        <!-- REPLACE 'cover.jpg' WITH YOUR COVER PHOTO FILE NAME -->
-        <img src="cover.jpg" alt="Cover Photo" class="cover-photo" onerror="this.style.display='none'">
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">Shakthi Karthik</a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
       </div>
-      <div class="profile-content">
-        <div class="profile-title">
-          <h1>Shakthi Karthik</h1>
-          <p>Computer Science Student @ University of Georgia</p>
-        </div>
-        <div class="contact-links">
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="hero">
+      <div class="cover-container">
+        <!-- Photo referenced from assets folder -->
+        <img src="assets/cover.jpg" alt="Cover Photo" class="cover-photo" onerror="this.style.display='none'">
+      </div>
+      <div class="profile-body">
+        <h1>Shakthi Karthik</h1>
+        <p>Computer Science Student @ University of Georgia</p>
+        <div class="btn-group">
           <a href="mailto:sk73064@uga.edu" class="btn">Email</a>
           <a href="https://linkedin.com/in/shakthi-karthik" target="_blank" class="btn">LinkedIn</a>
           <a href="https://github.com/skarthikb-tech" target="_blank" class="btn">GitHub</a>
-          <span class="btn" style="cursor: default;">Athens, GA</span>
         </div>
       </div>
-    </header>
+    </div>
 
-    <!-- Education Section -->
-    <section id="education">
-      <h2 class="section-header">Education</h2>
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">University of Georgia</div>
-            <div class="card-subtitle">Bachelor of Science in Computer Science</div>
-          </div>
-          <div class="card-date">Expected Graduation: May 2029</div>
-        </div>
-        <div class="card-body">
-          <p><strong>GPA:</strong> 3.72/4.00 | HOPE Scholarship, Dean's List (3 Semesters)</p>
-          <p style="margin-top: 0.5rem;"><strong>Coursework:</strong> Data Structures & Algorithms, Software Engineering, Theory of Computing, Discrete Mathematics, OOP</p>
-        </div>
+    <h2 class="section-title">Education</h2>
+    <div class="card">
+      <h3 style="font-size: 1.15rem;">University of Georgia</h3>
+      <p style="color: var(--accent); font-weight: 500;">Bachelor of Science in Computer Science</p>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem;">Expected Graduation: May 2029 | GPA: 3.72/4.00</p>
+      <p><strong>Honors:</strong> HOPE Scholarship, Dean's List (3 Semesters)</p>
+      <p><strong>Coursework:</strong> Data Structures & Algorithms, Software Engineering, Theory of Computing, Discrete Mathematics, OOP</p>
+    </div>
+
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="card">
+      <p><strong>Programming & Tools:</strong></p>
+      <div class="skills-grid" style="margin-bottom: 1rem;">
+        <span class="skill-pill">Python</span><span class="skill-pill">Java</span><span class="skill-pill">C++</span>
+        <span class="skill-pill">HTML5</span><span class="skill-pill">CSS</span><span class="skill-pill">SQL</span>
+        <span class="skill-pill">Dart</span><span class="skill-pill">Flutter</span><span class="skill-pill">Firebase</span><span class="skill-pill">Supabase</span>
       </div>
-    </section>
-
-    <!-- Technical Skills Section -->
-    <section id="skills">
-      <h2 class="section-header">Technical & Language Skills</h2>
-      <div class="card">
-        <div class="card-body">
-          <p><strong>Programming & Tools:</strong></p>
-          <div class="skills-grid" style="margin-bottom: 1rem;">
-            <span class="skill-pill">Python</span>
-            <span class="skill-pill">Java</span>
-            <span class="skill-pill">C++</span>
-            <span class="skill-pill">HTML5</span>
-            <span class="skill-pill">CSS</span>
-            <span class="skill-pill">SQL</span>
-            <span class="skill-pill">Dart</span>
-            <span class="skill-pill">Flutter</span>
-            <span class="skill-pill">Firebase</span>
-            <span class="skill-pill">Supabase</span>
-          </div>
-          <p><strong>Languages:</strong></p>
-          <div class="skills-grid">
-            <span class="skill-pill">English (Fluent)</span>
-            <span class="skill-pill">Tamil (Fluent)</span>
-            <span class="skill-pill">Spanish (Intermediate)</span>
-          </div>
-        </div>
+      <p><strong>Languages:</strong></p>
+      <div class="skills-grid">
+        <span class="skill-pill">English (Fluent)</span><span class="skill-pill">Tamil (Fluent)</span><span class="skill-pill">Spanish (Intermediate)</span>
       </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2 class="section-header">Projects & Research</h2>
-      
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">CURO: Securing AI Document Assistants Against Hidden Instructions</div>
-            <div class="card-subtitle">Researcher</div>
-          </div>
-          <div class="card-date">Aug 2026 – Present</div>
-        </div>
-        <div class="card-body">
-          <ul>
-            <li>Developing a controlled dataset of benign and malicious documents with hidden instructions embedded in text and metadata to evaluate prompt-injection vulnerabilities in AI document assistants.</li>
-            <li>Running adversarial attacks against AI workflows and measuring safeguard effectiveness in separating user intent from untrusted content.</li>
-            <li>Assessing local-first defenses strengthening AI document interpretation for users relying on spoken summaries or guided navigation.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">DogPack</div>
-            <div class="card-subtitle">Developer</div>
-          </div>
-          <div class="card-date">Aug 2026 – Present</div>
-        </div>
-        <div class="card-body">
-          <ul>
-            <li>Defining core user flows to connect UGA students by shared courses, study locations, and availability for study scheduling.</li>
-            <li>Designing the cross-platform iOS and Android application using Flutter (Dart), backed by Supabase for authentication, PostgreSQL, and real-time course matching.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Somnolence</div>
-            <div class="card-subtitle">Co-Developer</div>
-          </div>
-          <div class="card-date">Jun 2022 – Aug 2022</div>
-        </div>
-        <div class="card-body">
-          <ul>
-            <li>Co-developed a sleep-wellness application promoting healthier habits through reward systems and screen-time management in Flutter.</li>
-            <li>Selected in the top ~35% of a competitive cohort to present at Prequel after delivering a working pitch prototype within 2.5 months.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-      <h2 class="section-header">Experience</h2>
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Mathnasium - The Math Learning Center</div>
-            <div class="card-subtitle">Mathematics Instructor</div>
-          </div>
-          <div class="card-date">Sep 2024 – Aug 2025</div>
-        </div>
-        <div class="card-body">
-          <ul>
-            <li>Tutored 45+ students across algebra, geometry, and calculus, increasing average student performance by 15%.</li>
-            <li>Adapted teaching strategies to diverse learning styles across 6+ grade levels, improving engagement scores by ~25%.</li>
-            <li>Built structured lesson flows and custom practice materials addressing problem-solving gaps and concept retention.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Campus Involvement -->
-    <section id="involvement">
-      <h2 class="section-header">Campus Involvement</h2>
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">UGA DevDogs GDGoC</div>
-            <div class="card-subtitle">Flutter Focus Lead</div>
-          </div>
-          <div class="card-date">Aug 2026 – Present</div>
-        </div>
-        <div class="card-body">
-          <p>Facilitate hands-on Flutter workshops for club members while serving as a primary technical resource to troubleshoot mobile development questions and guide app architecture.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">UGA AWS Student Builder Group</div>
-            <div class="card-subtitle">Member</div>
-          </div>
-          <div class="card-date">Aug 2026 – Present</div>
-        </div>
-        <div class="card-body">
-          <p>Participate in hands-on cloud infrastructure workshops and project-building focused on core AWS architecture.</p>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <p>© Shakthi Karthik. Hosted on GitHub Pages.</p>
-    </footer>
+    </div>
   </div>
 
 </body>
