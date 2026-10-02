@@ -178,10 +178,6 @@ h1, h2, h3 {
   border: 4px solid var(--black);
   display: block;
   box-sizing: border-box;
-  
-  
-  transform:  translateY(15%); 
-
 }
 
 .portrait-note {
