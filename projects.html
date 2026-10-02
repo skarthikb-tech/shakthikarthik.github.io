@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shakthi Karthik | Projects</title>
+  <title>Shakthi Karthik | Projects & Research</title>
   <style>
     :root {
-      --bg-color: #090d16;
-      --header-bg: #0f172a;
-      --card-bg: #111827;
-      --primary-text: #ffffff;
-      --secondary-text: #cbd5e1;
+      --bg-color: #080c14;
+      --header-bg: #0e1626;
+      --card-bg: #0f172a;
       --accent-blue: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --primary-text: #f8fafc;
+      --secondary-text: #94a3b8;
       --border: #1e293b;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-      background-color: var(--bg-color); 
-      color: var(--primary-text); 
-      line-height: 1.6; 
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--primary-text);
+      line-height: 1.6;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -30,70 +31,106 @@
     header {
       background-color: var(--header-bg);
       border-bottom: 1px solid var(--border);
-      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    .nav-container { 
+    .nav-container {
       width: 85%;
       max-width: 1300px;
-      margin: 0 auto; 
-      padding: 1.25rem 0; 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
+      margin: 0 auto;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .nav-brand { 
-      font-weight: 700; 
-      font-size: 1.25rem; 
-      color: var(--primary-text); 
-      text-decoration: none; 
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+    .nav-brand {
+      font-family: ui-monospace, monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary-text);
+      text-decoration: none;
     }
 
-    .nav-links { display: flex; gap: 1.75rem; }
-    .nav-links a { text-decoration: none; color: var(--secondary-text); font-weight: 500; font-size: 1rem; transition: color 0.2s ease; }
+    .nav-brand span { color: var(--accent-blue); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { text-decoration: none; color: var(--secondary-text); font-weight: 500; font-size: 0.95rem; }
     .nav-links a:hover, .nav-links a.active { color: var(--accent-blue); }
 
-    .container { 
-      width: 85%; 
-      max-width: 1300px; 
-      margin: 2rem auto; 
+    .container {
+      width: 85%;
+      max-width: 1300px;
+      margin: 2.5rem auto;
       flex: 1;
     }
 
-    .page-title { 
-      font-size: 1.8rem; 
-      margin-bottom: 1.5rem; 
+    .page-title {
+      font-family: ui-monospace, monospace;
+      font-size: 1.5rem;
       color: var(--primary-text);
+      margin-bottom: 2rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 0.4rem;
     }
 
-    .card { 
-      background: var(--card-bg); 
-      border: 1px solid var(--border); 
-      padding: 1.75rem; 
-      margin-bottom: 1.75rem; 
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; 
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.25s ease;
     }
 
-    .card:hover { 
-      transform: translateY(-4px); 
+    .card:hover {
+      transform: translateY(-3px);
       border-color: var(--accent-blue);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 12px 24px -10px var(--accent-glow);
     }
 
-    .card-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.75rem; }
-    .card-title { font-size: 1.25rem; font-weight: 600; color: var(--primary-text); }
-    .card-subtitle { color: var(--accent-blue); font-weight: 500; font-size: 1rem; }
-    .card-date { font-size: 0.9rem; color: var(--secondary-text); }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
 
-    ul { margin-left: 1.25rem; color: var(--secondary-text); font-size: 1rem; }
+    .card-title { font-size: 1.25rem; font-weight: 600; color: var(--primary-text); }
+    .card-subtitle { color: var(--accent-blue); font-family: ui-monospace, monospace; font-size: 0.95rem; }
+    .card-date { font-family: ui-monospace, monospace; font-size: 0.85rem; color: var(--secondary-text); }
+
+    ul { margin-left: 1.25rem; color: var(--secondary-text); font-size: 0.95rem; }
     li { margin-bottom: 0.5rem; }
+
+    /* Expandable Architecture Details */
+    details {
+      margin-top: 1rem;
+      border-top: 1px solid var(--border);
+      padding-top: 0.75rem;
+    }
+
+    summary {
+      cursor: pointer;
+      font-family: ui-monospace, monospace;
+      font-size: 0.85rem;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+
+    summary:hover { text-decoration: underline; }
+
+    .details-body {
+      margin-top: 0.75rem;
+      background: #080c14;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--secondary-text);
+    }
 
     footer {
       background-color: var(--header-bg);
@@ -114,8 +151,8 @@
       gap: 1rem;
     }
 
-    .footer-links { display: flex; gap: 1.25rem; }
-    .footer-links a { color: var(--secondary-text); text-decoration: none; font-size: 0.95rem; transition: color 0.2s ease; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { color: var(--secondary-text); text-decoration: none; font-size: 0.9rem; font-family: ui-monospace, monospace; }
     .footer-links a:hover { color: var(--accent-blue); }
   </style>
 </head>
@@ -123,65 +160,81 @@
 
   <header>
     <div class="nav-container">
-      <a href="index.html" class="nav-brand">Shakthi Karthik</a>
+      <a href="index.html" class="nav-brand"><span>shakthi</span>.karthik()</a>
       <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="projects.html" class="active">Projects</a>
+        <a href="index.html">Overview</a>
+        <a href="projects.html" class="active">Research & Architecture</a>
         <a href="experience.html">Experience</a>
       </div>
     </div>
   </header>
 
   <div class="container">
-    <h1 class="page-title">Projects & Research</h1>
+    <h1 class="page-title">01 // Research & Systems Engineering</h1>
 
+    <!-- Research Project -->
     <div class="card">
       <div class="card-header">
         <div>
-          <div class="card-title">CURO: Securing AI Document Assistants Against Hidden Instructions</div>
-          <div class="card-subtitle">Researcher</div>
+          <div class="card-title">CURO: Securing AI Document Assistants</div>
+          <div class="card-subtitle">AI Security Research @ UGA</div>
         </div>
         <div class="card-date">Aug 2026 – Present</div>
       </div>
       <ul>
-        <li>Developing a controlled dataset of benign and malicious documents with hidden instructions embedded in text and metadata to evaluate prompt-injection vulnerabilities.</li>
-        <li>Running adversarial attacks against AI document-assistance workflows and measuring safeguard effectiveness.</li>
-        <li>Assessing local-first defenses strengthening AI document interpretation for users relying on spoken summaries or guided navigation.</li>
+        <li>Developing a controlled dataset of benign and malicious documents with hidden prompt-injection payload vectors in metadata and structured text.</li>
+        <li>Evaluating adversarial prompt-injection vulnerabilities across agentic AI document-assistance workflows.</li>
+        <li>Measuring safeguard effectiveness in isolating untrusted document content from execution logic.</li>
       </ul>
+      <details>
+        <summary>[+] Technical Spec & Threat Vector Details</summary>
+        <div class="details-body">
+          Defensive focus on evaluating local-first runtime safeguards. Tests isolate prompt-injection boundaries for users relying on automated speech summaries and document navigation workflows.
+        </div>
+      </details>
     </div>
 
+    <!-- DogPack -->
     <div class="card">
       <div class="card-header">
         <div>
           <div class="card-title">DogPack</div>
-          <div class="card-subtitle">Developer</div>
+          <div class="card-subtitle">Real-time Student Matching Platform</div>
         </div>
         <div class="card-date">Aug 2026 – Present</div>
       </div>
       <ul>
-        <li>Defining core user flows to connect UGA students by shared courses, study locations, and availability.</li>
-        <li>Designing the application using Flutter (Dart) for iOS and Android UI, backed by Supabase for authentication and PostgreSQL.</li>
+        <li>Designing cross-platform client architecture using Flutter (Dart) targeting iOS and Android.</li>
+        <li>Structuring real-time user discovery workflows backed by Supabase authentication and PostgreSQL database schemas.</li>
       </ul>
+      <details>
+        <summary>[+] Architectural Stack</summary>
+        <div class="details-body">
+          Engineered around real-time location-based study group discovery, course-matching algorithms, and Supabase Row Level Security (RLS) policies.
+        </div>
+      </details>
     </div>
 
+    <!-- Somnolence -->
     <div class="card">
       <div class="card-header">
         <div>
           <div class="card-title">Somnolence</div>
-          <div class="card-subtitle">Co-Developer</div>
+          <div class="card-subtitle">Mobile Application / Prequel Startup Presenter</div>
         </div>
         <div class="card-date">Jun 2022 – Aug 2022</div>
       </div>
       <ul>
-        <li>Co-developed a sleep-wellness application promoting healthier habits through reward systems and screen-time management.</li>
-        <li>Built the pitch prototype in Flutter and earned a selective (~35%) spot to present at Prequel.</li>
+        <li>Co-developed screen-time management and sleep-wellness application in Flutter.</li>
+        <li>Built and pitched prototype in 2.5 months, competing in a selective (~35%) cohort presentation at Prequel.</li>
       </ul>
     </div>
+
   </div>
 
   <footer>
     <div class="footer-container">
-      <p>© Shakthi Karthik</p>
+      <p style="font-family:ui-monospace, monospace; font-size:0.85rem; color:var(--secondary-text);">© Shakthi Karthik</p>
       <div class="footer-links">
         <a href="mailto:sk73064@uga.edu">sk73064@uga.edu</a>
         <a href="https://linkedin.com/in/shakthi-karthik" target="_blank">LinkedIn</a>
