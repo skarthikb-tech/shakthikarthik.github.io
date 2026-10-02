@@ -180,6 +180,9 @@ h1, h2, h3 {
   box-sizing: border-box;
 }
 
+transform: scale(0.85);
+transform-origin: center;
+
 .portrait-note {
   margin-top: 13px;
   color: var(--muted-2);
