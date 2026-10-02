@@ -155,25 +155,33 @@ h1, h2, h3 {
 
 .portrait-wrap { text-align: center; }
 
+/* Modified circular container to clip and house portrait images */
 .portrait {
   width: min(340px, 75vw);
   aspect-ratio: 1;
   margin-inline: auto;
   border-radius: 50%;
-  padding: 8px;
-  display: grid;
-  place-items: center;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(145deg, #1c4775, #071e3a);
   box-shadow: 0 24px 80px rgba(0,0,0,.35);
+  overflow: hidden;
 }
 
-.portrait::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
+/* Image scaling inside the circle frame */
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 4px solid var(--black);
+  display: block;
 }
 
+/* Fallback letter styling if no img is present */
 .portrait span {
   width: 100%;
   height: 100%;
@@ -181,8 +189,7 @@ h1, h2, h3 {
   border: 5px solid var(--black);
   display: grid;
   place-items: center;
-  background:
-    radial-gradient(circle at 50% 35%, #1c3550, #0d1722 62%, #080b0f);
+  background: radial-gradient(circle at 50% 35%, #1c3550, #0d1722 62%, #080b0f);
   color: #fff;
   font: 700 clamp(48px, 7vw, 76px) "Manrope", sans-serif;
   letter-spacing: -.05em;
