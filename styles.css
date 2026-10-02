@@ -173,13 +173,11 @@ h1, h2, h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 20%; 
   border-radius: 50%;
   border: 4px solid var(--black);
   display: block;
   box-sizing: border-box;
-  transform: scale(0.625); 
-  transform-origin: center;
 }
 
 .portrait-note {
