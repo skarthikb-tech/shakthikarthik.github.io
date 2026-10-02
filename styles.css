@@ -180,8 +180,8 @@ h1, h2, h3 {
   box-sizing: border-box;
   
   
-  transform: scale(0.85) translateY(5%); 
-  transform-origin: center;
+  transform:  translateY(15%); 
+
 }
 
 .portrait-note {
