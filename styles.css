@@ -172,13 +172,13 @@ h1, h2, h3 {
 .portrait-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   border-radius: 25%;
   border: 4px solid var(--black);
   display: block;
   box-sizing: border-box;
-  transform: scale(0.85);
+  transform: scale(0.60);
   transform-origin: center;
 }
 
